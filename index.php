@@ -3,18 +3,22 @@
 
 <script type="text/javascript">// <![CDATA[
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $('#on').click(function(){
+        $('#on').click(function () {
             var relay_id = $(this).val();
 
-            var a= new XMLHttpRequest();
+            var a = new XMLHttpRequest();
 
-            a.open("GET", "switchRelay.php?relay_id="+relay_id+"&status=on"); a.onreadystatechange=function(){
+            a.open("GET", "switchRelay.php?relay_id=" + relay_id + "&status=on&command=switchRelay");
+            a.onreadystatechange = function () {
 
-                if(a.readyState==4){ if(a.status ==200){
+                if (a.readyState == 4) {
+                    if (a.status == 200) {
 
-                } else console.log("http error"); } }
+                    } else console.log("http error");
+                }
+            }
 
             a.send();
 
@@ -22,25 +26,26 @@
 
     });
 
-    $(document).ready(function()
+    $(document).ready(function () {
+        $('#off').click(function () {
+            var relay_id = $(this).val();
+            var a = new XMLHttpRequest();
 
-    { $('#off').click(function(){
-        var relay_id = $(this).val();
-        var a= new XMLHttpRequest();
+            a.open("GET", "switchRelay.php?relay_id=" + relay_id + "&status=off&command=switchRelay");
 
-        a.open("GET", "switchRelay.php?relay_id="+relay_id+"&status=off");
+            a.onreadystatechange = function () {
 
-        a.onreadystatechange=function(){
+                if (a.readyState == 4) {
 
-            if(a.readyState==4){
+                    if (a.status == 200) {
 
-                if(a.status ==200){
+                    } else alert("http error");
+                }
+            }
 
-                } else alert ("http error"); } }
+            a.send();
 
-        a.send();
-
-    });
+        });
 
     });
 
