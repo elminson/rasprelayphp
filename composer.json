@@ -1,0 +1,35 @@
+{
+    "name": "elminson/rasprelayphp",
+    "description": "Project raspberry pi relay and php",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^7.4@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elminson De Oleo Baez",
+            "email": "edeoleo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Elminson\\rasprelayphp\\": "src/",
+            "Elminson\\rasprelayphp\\Test\\": "tests/"
+        },
+        "psr-4": {
+            "Elminson\\rasprelayphp\\": "src/",
+            "Elminson\\rasprelayphp\\Test\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elminson\\rasprelayphp\\": "src/",
+            "Elminson\\rasprelayphp\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}
