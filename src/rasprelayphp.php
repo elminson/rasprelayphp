@@ -29,8 +29,8 @@ class rasprelayphp
     public function switchRelay($relay_id, $status){
 
         //Validate $relay_id and $status
-        system(" gpio-g mode $relay_id out ") ;
-        system(" gpio-g write $relay_id $status") ;
+        system(" gpio mode $relay_id out ") ;
+        system(" gpio write $relay_id $status") ;
 
     }
 
