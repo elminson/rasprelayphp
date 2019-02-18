@@ -3,7 +3,7 @@ namespace Elminson\rasprelayphp;
 require __DIR__ . '/vendor/autoload.php';
 
 $rasprelayphp = new rasprelayphp();
-$command = "status";
+$command = "";
 if(isset($_GET['command'])){
     $command= $_GET['command'];
 }
